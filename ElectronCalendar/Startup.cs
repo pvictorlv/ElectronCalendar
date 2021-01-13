@@ -8,7 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ElectronCalendar.Database;
 using ElectronNET.API;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace ElectronCalendar
 {
@@ -30,9 +32,22 @@ namespace ElectronCalendar
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var dbConf = Configuration.GetConnectionString("Database");
+            services.AddDatabaseServices(dbConf);
+
+            
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                })
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
+                    options => options.LoginPath = "/");
+
+            services.AddSession();
+
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
-            ;
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
