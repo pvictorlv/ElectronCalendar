@@ -11,10 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ElectronCalendar.Database\ElectronCalendar.Database.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\Api\" />
+    <ProjectReference Include="..\ElectronCalendar.Shared\ElectronCalendar.Shared.csproj" />
   </ItemGroup>
 
 </Project>

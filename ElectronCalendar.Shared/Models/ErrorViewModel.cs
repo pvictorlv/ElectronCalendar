@@ -1,6 +1,4 @@
-using System;
-
-namespace ElectronCalendar.Models
+namespace ElectronCalendar.Shared.Models
 {
     public class ErrorViewModel
     {
