@@ -1,5 +1,6 @@
 ﻿using System;
 using ElectronCalendar.Database.Data;
+using ElectronCalendar.Database.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +28,8 @@ namespace ElectronCalendar.Database
                 connBuilder.ConfigureWarnings(w => w.Log(RelationalEventId.MultipleCollectionIncludeWarning));
             });
 
+
+            serviceCollection.AddScoped<UserService>();
 
             return serviceCollection;
         }

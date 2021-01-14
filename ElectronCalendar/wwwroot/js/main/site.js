@@ -1,5 +1,5 @@
 ﻿
-require(['jquery', 'bootstrap'], function($){
+require(['jquery', 'bootstrap'], function($) {
 
     // DOM ready
     $(function() {

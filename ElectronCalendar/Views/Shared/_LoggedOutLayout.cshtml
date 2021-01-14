@@ -1,16 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ElectronCalendar</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <link rel="stylesheet" href="~/css/site.css"/>
-    
+    <link rel="stylesheet" href="~/css/site.css" />
+
     <script src="~/js/main/require-config.js" asp-append-version="true"></script>
     <script src="~/lib/requirejs/require.min.js"></script>
     <script src="~/js/main/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
 
 </head>
 <body>
@@ -38,6 +40,5 @@
     </div>
 </footer>
 
-@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
